@@ -1,4 +1,4 @@
-# Swift5 API client for OpenAPIClient
+# Swift5 API client for kandji_sdk
 
 <html><head></head><body><h1 id=&quot;welcome-to-the-kandji-api-documentation&quot;>Welcome to the Kandji API Documentation</h1>
 <p>You can find your API URL in Settings &gt; Access. The API URL will follow the below formats.</p>
