@@ -27,7 +27,7 @@ let package = Package(
         .target(
             name: "OpenAPIClient",
             dependencies: ["AnyCodable", ],
-            path: "OpenAPIClient/Classes"
+            path: "KandjiSDK/Classes/KandjiAPIs"
         ),
     ]
 )
