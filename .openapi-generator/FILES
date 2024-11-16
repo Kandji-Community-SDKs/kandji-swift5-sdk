@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .swiftformat
 Cartfile
 KandjiSDK/Classes/KandjiAPIs/APIHelper.swift
