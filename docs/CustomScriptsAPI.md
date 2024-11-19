@@ -175,7 +175,7 @@ This endpoint makes a request to retrieve a list of custom scripts from the Kand
 // The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
 import kandji_sdk
 
-let page = "page_example" // String | Optional page number (when results exceed pagination threshold) (optional)
+let page = "page_example" // String | Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
 
 // List Custom Scripts
 CustomScriptsAPI.listCustomScripts(page: page) { (response, error) in
@@ -194,7 +194,7 @@ CustomScriptsAPI.listCustomScripts(page: page) { (response, error) in
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **String** | Optional page number (when results exceed pagination threshold) | [optional] 
+ **page** | **String** | Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. | [optional] 
 
 ### Return type
 

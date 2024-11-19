@@ -191,7 +191,7 @@ extension kandji_sdkAPI {
     /**
      List Custom Profiles
      
-     - parameter page: (query) Optional page number (when results exceed pagination threshold) (optional)
+     - parameter page: (query) Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
@@ -219,7 +219,7 @@ extension kandji_sdkAPI {
     description: null
     url: https://api-docs.kandji.io/#6ab7e166-e758-454f-b43e-200537097a92
 }
-     - parameter page: (query) Optional page number (when results exceed pagination threshold) (optional)
+     - parameter page: (query) Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
     open class func listCustomProfilesWithRequestBuilder(page: String? = nil) -> RequestBuilder<AnyCodable> {

@@ -180,7 +180,7 @@ extension kandji_sdkAPI {
     /**
      List Custom Scripts
      
-     - parameter page: (query) Optional page number (when results exceed pagination threshold) (optional)
+     - parameter page: (query) Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
@@ -208,7 +208,7 @@ extension kandji_sdkAPI {
     description: null
     url: https://api-docs.kandji.io/#6c8acf81-96fd-4859-a508-e191d632ce64
 }
-     - parameter page: (query) Optional page number (when results exceed pagination threshold) (optional)
+     - parameter page: (query) Optional page number. Used when results exceed pagination threshold. A hard upper limit is set at 300 device records returned per request. (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
     open class func listCustomScriptsWithRequestBuilder(page: String? = nil) -> RequestBuilder<AnyCodable> {
