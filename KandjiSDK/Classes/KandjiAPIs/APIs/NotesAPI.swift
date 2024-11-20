@@ -252,15 +252,13 @@ extension kandji_sdkAPI {
      
      - parameter deviceId: (path)  
      - parameter noteId: (path)  
-     - parameter authorization: (header)  
-     - parameter contentType: (header)  
      - parameter body: (body)  (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateDeviceNote(deviceId: String, noteId: String, authorization: String, contentType: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
-        return updateDeviceNoteWithRequestBuilder(deviceId: deviceId, noteId: noteId, authorization: authorization, contentType: contentType, body: body).execute(apiResponseQueue) { result in
+    open class func updateDeviceNote(deviceId: String, noteId: String, body: String? = nil, apiResponseQueue: DispatchQueue = kandji_sdkAPI.apiResponseQueue, completion: @escaping ((_ data: AnyCodable?, _ error: Error?) -> Void)) -> RequestTask {
+        return updateDeviceNoteWithRequestBuilder(deviceId: deviceId, noteId: noteId, body: body).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -284,12 +282,10 @@ extension kandji_sdkAPI {
 }
      - parameter deviceId: (path)  
      - parameter noteId: (path)  
-     - parameter authorization: (header)  
-     - parameter contentType: (header)  
      - parameter body: (body)  (optional)
      - returns: RequestBuilder<AnyCodable> 
      */
-    open class func updateDeviceNoteWithRequestBuilder(deviceId: String, noteId: String, authorization: String, contentType: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
+    open class func updateDeviceNoteWithRequestBuilder(deviceId: String, noteId: String, body: String? = nil) -> RequestBuilder<AnyCodable> {
         var localVariablePath = "/api/v1/devices/{device_id}/notes/{note_id}"
         let deviceIdPreEscape = "\(APIHelper.mapValueToPathItem(deviceId))"
         let deviceIdPostEscape = deviceIdPreEscape.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? ""
@@ -304,8 +300,6 @@ extension kandji_sdkAPI {
 
         let localVariableNillableHeaders: [String: Any?] = [
             "Content-Type": "application/json",
-            "Authorization": authorization.encodeToJSON(),
-            "Content-Type": contentType.encodeToJSON(),
         ]
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)

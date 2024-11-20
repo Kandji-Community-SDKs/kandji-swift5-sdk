@@ -219,7 +219,7 @@ Name | Type | Description  | Notes
 
 # **updateDeviceNote**
 ```swift
-    open class func updateDeviceNote(deviceId: String, noteId: String, authorization: String, contentType: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
+    open class func updateDeviceNote(deviceId: String, noteId: String, body: String? = nil, completion: @escaping (_ data: AnyCodable?, _ error: Error?) -> Void)
 ```
 
 Update Device Note
@@ -233,12 +233,10 @@ import kandji_sdk
 
 let deviceId = "deviceId_example" // String | 
 let noteId = "noteId_example" // String | 
-let authorization = "authorization_example" // String | 
-let contentType = "contentType_example" // String | 
 let body = "body_example" // String |  (optional)
 
 // Update Device Note
-NotesAPI.updateDeviceNote(deviceId: deviceId, noteId: noteId, authorization: authorization, contentType: contentType, body: body) { (response, error) in
+NotesAPI.updateDeviceNote(deviceId: deviceId, noteId: noteId, body: body) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -256,8 +254,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **deviceId** | **String** |  | 
  **noteId** | **String** |  | 
- **authorization** | **String** |  | 
- **contentType** | **String** |  | 
  **body** | **String** |  | [optional] 
 
 ### Return type
